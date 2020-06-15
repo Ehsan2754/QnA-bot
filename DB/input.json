@@ -1,0 +1,14 @@
+[
+    {
+        "KEYWORD": "file",
+        "VALUE"  : "json"
+    },
+    {
+        "KEYWORD": "type",
+        "VALUE"  : "bot"
+    },
+    {
+        "KEYWORD": "Author",
+        "VALUE"  : "Ehsan"
+    }
+]
