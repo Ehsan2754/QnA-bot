@@ -26,10 +26,12 @@ if __name__ == "__main__":
     DBshell = DBserver.cursor()
     if constant.DB_NAME not in listDB(DBshell, constant.CMD_SHWDB):
         DBshell.execute(constant.CMD_MKDB.format(constant.DB_NAME))
+        DBserver.commit()
     DBserver.database = constant.DB_NAME
     if constant.TBL_NAME not in listDB(DBshell, constant.CMD_SHWTBL):
         DBshell.execute(constant.CMD_MKTBL.format(
             constant.TBL_NAME, constant.COLUMN_0, constant.COLUMN_1))
+        DBserver.commit()
     for item in getFileData():
         DBshell.execute(
             constant.CMD_INSERT.format
@@ -41,3 +43,4 @@ if __name__ == "__main__":
                 item[constant.COLUMN_0],
                 item[constant.COLUMN_1])
         )
+        DBserver.commit()
