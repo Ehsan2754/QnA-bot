@@ -4,7 +4,7 @@ import json
 
 
 def getFileData():
-    file = open(constant.FILE_PATH, 'r')
+     file = open(constant.FILE_PATH, 'r', encoding="utf-8")
     return json.load(file)
 
 
